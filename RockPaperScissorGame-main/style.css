@@ -1,0 +1,268 @@
+:root {
+  --red-color:#f03e3e;
+  --blue-color: #1c7ed6;
+  --green-color: #37b24d;
+  --yellow-color:#ffd43b;
+  --bg-main:#212529;
+  --bg-secondary: #495057;
+}
+
+.container-box, .main-container, .container .left, .container .right, .container .left .player, .container .left .computer, .container .right .player, .container .right .computer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.design {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: .1s ease-in;
+  z-index: 10000;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.container-box {
+  justify-content: center;
+  padding: 3.5rem;
+  gap: 2rem;
+  z-index: 2;
+  text-transform: uppercase;
+  text-align: center;
+  border-radius: 16px;
+  background-color: var(--bg-main);
+  box-shadow: 0 5px 50px 12px rgba(0, 0, 0, 0.14);
+  color: var(--yellow-color);
+  transition: .2s ease-in;
+}
+
+.container-box h1 {
+  font-size: 2.25rem;
+}
+
+.container-box button {
+  transition: .05s ease-in;
+  border-radius: 16px;
+  padding: .75rem 1.5rem;
+  font-size: 1.25rem;
+  border: none;
+  background-color: var(--bg-secondary);
+}
+
+.container-box button:hover {
+  color: var(--yellow-color);
+}
+
+.container-box button:active {
+  transform: scale(0.97);
+}
+
+body {
+  min-height: 100vh;
+  background-color: #212529;
+  font-family: 'Trispace', sans-serif;
+  overflow-x: hidden;
+}
+
+.main-container {
+  min-height: 100vh;
+}
+
+header {
+  margin: 0 1.5rem;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+header .title {
+  font-size: 4rem;
+  color: var(--yellow-color);
+  margin-bottom: 1rem;
+}
+
+header .description {
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+  color: var(--yellow-color);
+}
+
+header #battleResults {
+  font-size: 2rem;
+  margin: 4rem 0 -1rem 0;
+  color: var(--yellow-color);
+  text-transform: uppercase;
+}
+
+.container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  column-gap: 3rem;
+}
+
+.container .left, .container .right {
+  max-width: 400px;
+  width: 90vw;
+}
+
+.container .left .player, .container .left .computer, .container .right .player, .container .right .computer {
+  margin-top: 3rem;
+  padding: 2rem;
+  gap: 1.5rem;
+  text-transform: uppercase;
+  border-radius: 16px;
+  background-color: var(--bg-secondary);
+  min-width: 220px;
+  color: var(--bg-main);
+}
+
+.container .left .choice-container, .container .right .choice-container {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .5rem;
+}
+
+.container .left #scoreBoard_player, .container .left #scoreBoard_computer, .container .right #scoreBoard_player, .container .right #scoreBoard_computer {
+  background-color: var(--bg-secondary);
+  color: inherit;
+  font-size: 2.5rem;
+}
+
+.item-player, .item-computer {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 16px;
+  background-color: var(--bg-secondary);
+}
+
+i {
+  font-size: 3.75rem;
+  color: #212529;
+}
+
+.left .rock i:hover, .left .paper i:hover, .left .scissor i:hover {
+  transition: .116s ease-in;
+  transform: scale(1.32);
+  cursor: pointer;
+}
+
+.left .item-player.rock:hover {
+  border: 2px solid var(--red-color);
+}
+
+.left .item-player.paper:hover {
+  border: 2px solid var(--green-color);
+}
+
+.left .item-player.scissor:hover {
+  border: 2px solid var(--blue-color);
+}
+
+.left .rock i:hover, .red:hover {
+  color: var(--red-color);
+}
+
+.left .paper i:hover, .green:hover {
+  color: var(--green-color);
+}
+
+.left .scissor i:hover, .blue:hover {
+  color: var(--blue-color);
+}
+
+.actived.rock {
+  border: 2px solid var(--red-color);
+}
+
+.actived.rock i {
+  color: var(--red-color);
+  transform: scale(1.24);
+}
+
+.actived.paper {
+  border: 2px solid var(--green-color);
+}
+
+.actived.paper i {
+  color: var(--green-color);
+  transform: scale(1.24);
+}
+
+.actived.scissor {
+  border: 2px solid var(--blue-color);
+}
+
+.actived.scissor i {
+  color: var(--blue-color);
+  transform: scale(1.24);
+}
+
+footer {
+  font-size: 16px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: var(--yellow-color);
+  padding: 1rem;
+}
+
+@media (max-width: 600px) {
+  header .title {
+    font-size: 2rem;
+    margin: 0 .5rem;
+    margin-bottom: .75rem;
+  }
+  header .description {
+    font-size: .8rem;
+    margin-bottom: .7rem;
+  }
+  header #battleResults {
+    font-size: 1.35rem;
+    margin: 4rem 0 -.5rem 0;
+  }
+  .container {
+    margin-top: 1rem;
+    column-gap: .25rem;
+  }
+  .container .left, .container .right {
+    max-width: 160px;
+  }
+  .container .left .player, .container .left .computer, .container .right .player, .container .right .computer {
+    margin-top: 2rem;
+    margin-bottom: 1.25rem;
+    padding: 1rem;
+    gap: .75rem;
+    min-width: 130px;
+    color: var(--bg-main);
+  }
+  .container .left .player h1, .container .left .computer h1, .container .right .player h1, .container .right .computer h1 {
+    font-size: 1rem;
+  }
+  .container .left .choice-container, .container .right .choice-container {
+    margin-top: 1rem;
+    gap: .55rem;
+  }
+  .container .left #scoreBoard_player, .container .left #scoreBoard_computer, .container .right #scoreBoard_player, .container .right #scoreBoard_computer {
+    font-size: 1.15rem;
+  }
+  .item-player, .item-computer {
+    padding: .85rem;
+  }
+  i {
+    font-size: 2.5rem !important;
+  }
+}
+/*# sourceMappingURL=style.css.map */
