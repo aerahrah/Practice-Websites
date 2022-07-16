@@ -1,0 +1,165 @@
+:root {
+  --white-color:#f9faf8;
+  --white-secondary-color:#e5e7eb;
+  --blue-color: #3882f6;
+  --dark-color: #1f2937;
+  --grey-color: #e5e7eb;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h4 {
+  text-transform: capitalize;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+nav {
+  max-width: 1140px;
+}
+
+nav h1 {
+  color: var(--white-color);
+}
+
+nav ul li a {
+  color: var(--white-color);
+}
+
+nav ul li a:hover {
+  color: var(--white-secondary-color);
+  transform: scale(0.98);
+}
+
+.img-div {
+  border-radius: 8px;
+}
+
+section .second-section, section .third-section, section .call-container {
+  min-height: 60vh;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section:first-of-type .hero-section {
+  min-height: 60vh;
+  max-width: 1140px;
+  padding: 8rem 0 8rem 0;
+  margin: 0 auto;
+  color: var(--white-color);
+  justify-content: space-between;
+}
+
+section:nth-of-type(2) {
+  padding: 2.5rem 0 8rem 0;
+}
+
+section:nth-of-type(3) {
+  background-color: var(--grey-color);
+}
+
+section:nth-of-type(4) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section:nth-of-type(4) .call-container {
+  min-height: unset;
+  margin-top: 6rem;
+  margin-bottom: 7.5rem;
+}
+
+.left-item h1 {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.right-item .img-div {
+  background-color: var(--grey-color);
+  min-height: 300px;
+}
+
+.description {
+  color: var(--white-secondary-color);
+  font-size: 18px;
+}
+
+.btn {
+  padding: .3rem 2rem;
+  font-weight: bold;
+  border-radius: 6px;
+  display: block;
+  max-width: 180px;
+}
+
+.second-section {
+  color: var(--dark-color);
+}
+
+.second-section h2 {
+  font-weight: bold;
+  font-size: 36px;
+}
+
+.item-list .img-div {
+  height: 200px;
+  background-color: var(--white-color);
+  border: 8px solid var(--blue-color);
+}
+
+.item-list .item .description {
+  text-align: center;
+  margin-top: 1rem;
+  color: var(--dark-color);
+}
+
+blockquote p {
+  font-size: 36px;
+  font-weight: 200;
+  font-style: italic;
+}
+
+blockquote .author {
+  float: right;
+}
+
+.call-container h4 {
+  color: var(--white-color);
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.call-container .row {
+  background-color: var(--blue-color);
+  max-width: 980px;
+  width: 85vw;
+  min-height: 200px;
+  border-radius: 8px;
+}
+
+footer p {
+  text-align: center;
+  margin: 0;
+  color: var(--white-secondary-color);
+}
+
+@media (max-width: 600px) {
+  .btn {
+    margin: 0 auto;
+  }
+  .item {
+    padding-top: 1.5rem;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
